@@ -1,4 +1,7 @@
+import { HospedeService } from './../../../../service/hospede.service';
+import { Hospede } from './../../../../model/hospede.model';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hospede-form',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HospedeFormComponent implements OnInit {
 
-  constructor() { }
+  titulo: string = "Cadastrar novo Hospede";
+
+  hospede: Hospede = {
+    cpf: "",
+    dtNascimento: "",
+    nmHospede: "" 
+  }
+
+  constructor(
+    private service: HospedeService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  salvar(): void {
+    this.service.create(this.hospede).subscribe(() =>{
+      this.service.showMessage("Hospede cadastrado com sucesso!")
+      this.router.navigate(['/hospedes']);
+    });
   }
 
 }
