@@ -1,4 +1,7 @@
+import { HotelService } from './../../../../service/hotel.service';
+import { Hotel } from './../../../../model/hotel.model';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hotel-form',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HotelFormComponent implements OnInit {
 
-  constructor() { }
+  titulo: string = "Cadastrar novo Hotel";
+
+  hotel: Hotel = {
+    nmHotel : "",
+    endereco: "",
+    qtdEstrelas: 0
+  }
+
+  constructor(
+    private service: HotelService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  salvar(): void {
+    this.service.create(this.hotel).subscribe(() =>{
+      this.service.showMessage("Hotel cadastrado com sucesso!")
+      this.router.navigate(['/hoteis']);
+    });
   }
 
 }

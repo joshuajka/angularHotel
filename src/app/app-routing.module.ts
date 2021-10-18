@@ -9,17 +9,26 @@ import { HotelFormComponent } from './component/view/hotel/hotel-form/hotel-form
 import { HotelListComponent } from './component/view/hotel/hotel-list/hotel-list.component';
 import { QuartoFormComponent } from './component/view/quarto/quarto-form/quarto-form.component';
 import { QuartoListComponent } from './component/view/quarto/quarto-list/quarto-list.component';
+import { HotelUpdateComponent } from './component/view/hotel/hotel-update/hotel-update.component';
+import { HospedeUpdateComponent } from './component/view/hospede/hospede-update/hospede-update.component';
+import { HospedagemUpdateComponent } from './component/view/hospedagem/hospedagem-update/hospedagem-update.component';
+import { QuartoUpdateComponent } from './component/view/quarto/quarto-update/quarto-update.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'hoteis', component: HotelListComponent },
   { path: 'hoteis/form', component: HotelFormComponent },
+  { path: 'hoteis/:id', component: HotelUpdateComponent},
   { path: 'quartos', component: QuartoListComponent },
   { path: 'quartos/form', component: QuartoFormComponent },
+  { path: 'quartos/:id', component: QuartoUpdateComponent },
   { path: 'hospedes', component: HospedeListComponent },
   { path: 'hospedes/form', component: HospedeFormComponent },
+  { path: 'hospedes/:id', component: HospedeUpdateComponent },
   { path: 'hospedagens', component: HospedagemListComponent },
   { path: 'hospedagens/form', component: HospedagemFormComponent },
+  { path: 'hospedagens/:id', component: HospedagemUpdateComponent }
 ];
 
 @NgModule({
