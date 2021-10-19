@@ -27,7 +27,7 @@ export class HotelFormComponent implements OnInit {
   }
 
   salvar(): void {
-    this.service.create(this.hotel).subscribe(() =>{
+      this.service.create(this.hotel).subscribe(() =>{
       this.service.showMessage("Hotel cadastrado com sucesso!")
       this.router.navigate(['/hoteis']);
     });

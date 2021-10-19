@@ -1,6 +1,6 @@
-export interface Hospede{
-    idHospede?: number; 
-    cpf: string;
+export interface Hospede {
+    idHospede?: number;
+    nmHospede: string;
     dtNascimento: string;
-    nmHospede: string; 
-} 
+    cpf: number;
+  }

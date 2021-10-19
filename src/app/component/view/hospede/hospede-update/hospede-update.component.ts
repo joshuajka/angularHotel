@@ -13,8 +13,8 @@ export class HospedeUpdateComponent implements OnInit {
 
   hospede: Hospede = {
     nmHospede: '',
-    dtNascimento: '',
-    cpf: ''
+    cpf: 0,
+    dtNascimento: ''
   }
   constructor(
     private route: ActivatedRoute,

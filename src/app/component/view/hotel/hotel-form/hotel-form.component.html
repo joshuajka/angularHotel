@@ -7,11 +7,9 @@
         <mat-form-field>
             <input matInput placeholder="Endereço" name="endereco" [(ngModel)]="hotel.endereco">
         </mat-form-field>
-
         <mat-form-field>
             <input matInput type="number" placeholder="Quantidade de Estrelas" name="qtdEstrelas" [(ngModel)]="hotel.qtdEstrelas">
         </mat-form-field>
-
     </form>
 
     <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
